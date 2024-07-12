@@ -2,7 +2,7 @@
 
 ## Tienes que leer este readme para que entiendas como funciona y como puedes poner en marchar el proyecto de aplicaciones mobiles.
 
-### Requisitos
+## Requisitos
     Necesitas por lo menos una terminal para cada proecto uno para Ejemplo5Afront que es el de Angular y otro para ejemploGabriel5a que es el de express
 
 ### Proyecto de Angular
