@@ -1,0 +1,27 @@
+<p>crear-producto works!</p>
+<button (click)="productos()">Regresa al listado</button>
+<table>
+    <tr>
+        <td><label for="">Nombre</label></td>
+        <td><input type="text" name="" id="" [(ngModel)]="producto.nombre"></td>
+    </tr>
+    <tr>
+        <td><label for="">Descripcion</label></td>
+        <td><input type="text" name="" id="" [(ngModel)]="producto.descripcion"></td>
+    </tr>
+    <tr>
+        <td><label for="">Existencia</label></td>
+        <td><input type="text" name="" id="" [(ngModel)]="producto.existencia"></td>
+    </tr>
+    <tr>
+        <td><label for="">Precio</label></td>
+        <td><input type="text" name="" id="" [(ngModel)]="producto.precio"></td>
+    </tr>
+    <tr>
+        <td><label for="">Imagen</label></td>
+        <td><input type="file" name="" id="" accept="image/png, image/jpeg/gif" (change)="fotoseleccionada($event)"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button (click)="guardarProd()">Guardar</button></td>
+    </tr>
+</table>

@@ -1,0 +1,41 @@
+<span></span>
+<ul>
+    <li><a href="" routerLink="inicio">Inicio</a></li>
+    <li><a href="" routerLink="contacto">Contacto</a></li>
+    <li><a href="" routerLink="productDetail">Detalles del Producto</a></li>
+    <li><a href="" routerLink="producto">Producto</a></li>
+    @if (inisesionService.eslogueado()) {
+    <li><a href="" routerLink="directivas">Catalogo</a></li>
+    <li><a href="" routerLink="empleado">Empleado</a></li>
+    }
+    @if (inisesionService.eslogueado()) {
+      <li><a href="" (click)="inisesionService.cerrarSesion()">Cerrar Sesion</a></li>
+    }
+    @else{
+      <li><a href="" routerLink="iniciosesion">Inicio Sesion</a></li>
+    }
+    
+    
+</ul>
+
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>people</mat-icon>
+      <span>Empleado</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>

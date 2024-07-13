@@ -1,0 +1,78 @@
+<div style="padding-left: 15%;">
+<p>directivas works!</p>
+
+<h2> ********** IF ***********</h2>
+
+{{ usuario}}
+usuario:<select name="" id="" [(ngModel)]="usuario">
+    <option value="0">Seleccione Uno</option>
+    <option value="empleado">Empleado</option>
+    <option value="cliente">Cliente</option>
+</select>
+<br>
+<input *ngIf="valor" type="button" value="Aceptar">
+@if(usuario == "empleado"){
+<input type="button" value="Cancelar">
+}
+
+<br><br>
+Eres trabajador: <input type="text" [(ngModel)]="erestrabajador"><br>
+Nacionalidad: <input type="text" [(ngModel)]="nacionalidad"><br>
+
+@if(erestrabajador=="si" && nacionalidad=="Mexico") {
+    nombre: <input type="text"><br>
+    email: <input type="email" name="" id=""><br>
+    edad:  <input type="number" name="" id="" min="18" max="65"><br>
+    <input type="button" value="Enviar">
+}
+
+<h2> ********** IF - ELSE ***********</h2>
+
+<span *ngIf="dia == 'Martes', else falsa">
+    dia de la semana Martes
+
+</span>
+
+<ng-template #falsa>
+    dia de la semana diferente a Martes, la validadción es falsa
+</ng-template>
+<br><br><br>
+@if (fruta == 'Pera' || dia != 'Martes') {
+    Fruta de la semana Pera
+}@else {
+    Fruta diferente a Pera, la validación es falsa
+}
+
+<h2> ********** Swicth case ***********</h2>
+
+Tu cuatrimestre: <input type="text" [(ngModel)]="opcion">
+
+    <span [ngSwitch]="opcion">
+        <span *ngSwitchCase="'1'">Primero</span>
+        <span *ngSwitchCase="'2'">Segundo</span>
+        <span *ngSwitchCase="'3'">Tercero</span>
+        <span *ngSwitchCase="'4'">Cuarto</span>
+        <span *ngSwitchCase="'5'">Quinto</span>
+        <span *ngSwitchDefault>Error en la opción elige otra</span>
+    </span>
+
+    <table border="10">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of productos">
+            <td align="center">{{prod.codigo}}</td>
+            <td>{{prod.nombre}}</td>
+            <td>${{prod.precio}}</td>
+            <td>{{prod.descripcion}}</td>
+          </tr>
+        </tbody>
+      </table>      
+      <br><br>
+</div>

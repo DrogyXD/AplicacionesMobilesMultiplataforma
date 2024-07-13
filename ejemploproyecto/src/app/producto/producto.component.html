@@ -1,0 +1,62 @@
+<p>Productos:</p>
+<button (click)="crearProducto()">Crear producto</button>
+<table>
+  <tr>
+    <td>Nombre</td>
+    <td>Descripcion</td>
+    <td>Existencia</td>
+    <td>Precio</td>
+    <td>Imagen</td>
+  </tr>
+  <tr *ngFor="let prod of productos | async">
+    <td>{{ prod.nombre }}</td>
+    <td>{{ prod.descripcion }}</td>
+    <td>{{ prod.existencia }}</td>
+    <td>{{ prod.precio }}</td>
+    <td><img src="{{ prod.imgurl }}" alt="30%" height="30%"></td>
+    <td><button (click)="desplegarModal()">Editar</button></td>
+    <td><button (click)="eliminarProd(prod.nombre)">Eliminar</button></td>
+  </tr>
+</table>
+
+<!-- Modal -->
+<div id="editModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>El modal está abierto.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cerrarModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-dialog {
+    margin: 1.75rem auto;
+  }
+
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+  }
+</style>
